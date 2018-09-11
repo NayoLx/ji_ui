@@ -1,0 +1,35 @@
+<!--pages/address/index.wxml-->
+
+<scroll-view scroll-y="true" style='height: {{winHeight - 100}}px;'>
+  <block wx:for="{{allAdd.address}}">
+    <view class='addlist'>
+      <button>
+        <text>{{item.detail_address}}</text>
+        <text>{{item.phone}}\t{{item.name}}</text>
+      </button>
+      <view class='control'>
+        <radio-group class="radio-group" bindchange="onRadiochange">
+          <radio wx:if="{{item.checked == true}}"   bindtap = "onRadiobtn"  checked = "{{item.checked}}" value="{{item.addid}}" color='#FFCA0F'  >已设为默认</radio>
+          <radio wx:else color='#FFCA0F' bindtap = "onRadiobtn" value="{{item.addid}}">设为默认</radio>
+        </radio-group>
+      </view>
+
+      <view wx:if="{{systemInfo.platform == 'devtools' || systemInfo.platform == 'ios'}}" class='contro'>
+        <image src='../../i/icon/edit@2x.png' data-id="{{item.addid}}" bindtap='onEdit'></image>
+        <text data-id="{{item.addid}}" bindtap='onEdit'>编辑</text>
+        <image src='../../i/icon/delete@2x.png' data-id="{{item.addid}}" bindtap='onDelete'></image>
+        <text data-id="{{item.addid}}" bindtap='onDelete'>删除</text>
+      </view>
+      <view wx:else class='controAn'>
+        <image src='../../i/icon/edit@2x.png' bindtap='onEdit'></image>
+        <text bindtap='onEdit'>编辑</text>
+        <image src='../../i/icon/delete@2x.png' data-id="{{item.addid}}" bindtap='onDelete'></image>
+        <text data-id="{{item.addid}}" bindtap='onDelete'>删除</text>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<view class='btn'>
+  <button bindtap='toNewadd'>添加新地址</button>
+</view>

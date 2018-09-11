@@ -1,0 +1,26 @@
+<!--pages/machine/Printer/index.wxml-->
+
+<!--主盒子-->
+<view class="container">
+  <!--左侧栏-->
+  <scroll-view scroll-y="true" style='height: {{winHeight}}px' class='scrollview'><!--设置可滚动-->
+      <block wx:for="{{cateItems}}">
+        <view class="nav_left_items {{curNav == item.Printerid ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.Printerid}}">
+          {{item.Printername}}
+        </view>
+      </block>
+  </scroll-view>
+  <!--右侧栏-->
+  <scroll-view scroll-y="true" style='height: {{winHeight}}px' class='scrollview2'><!--设置可滚动-->
+    <view wx:if="{{cateItems[curIndex].ishaveChild}}">
+      <block wx:for="{{cateItems[curIndex].children}}">
+        <view class="nav_right_items">
+          <image src="{{item.image}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <!--如果无数据，则显示数据-->
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+   </scroll-view>
+</view>

@@ -1,0 +1,106 @@
+/* pages/my/address/index.wxss */
+
+.addlist{
+  width: 100%;
+  height: 252rpx;
+  border-bottom: 10px solid #F1F2F5;
+  border-top: 1px solid #F1F2F5;
+}
+
+radio .wx-radio-input .wx-radio-input-checked{
+   border: none; 
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.addlist button{
+  margin-top: 20rpx;
+  border: none;
+  float: left;
+  background-color: white;
+  width: 100%;
+  height: 142rpx;
+  border-bottom: 1px solid #D9D9D9;
+  line-height: 60rpx;
+}
+.addlist button text{
+  font-size: 32rpx;
+  float: left;
+}
+.addlist image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 15rpx;
+  margin-left: 30rpx;
+  margin-top: 1.5%;
+}
+.control{
+   float: left;
+   font-size: 31rpx;
+   height: 80rpx;
+   margin-top: 2.5%;
+   margin-left: 5%;
+  color: #A5A5A4;
+}
+.contro{
+   float: right;
+   height: 80rpx;
+   margin-right: 5%;
+   margin-top: 3.5%;
+   margin-bottom: 2px;
+   display: flex;
+   flex-direction: center;
+   justify-content: center;
+}
+.contro text{
+  font-size: 31rpx;
+  vertical-align: middle;
+  color: #A5A5A4;
+}
+.contro .text{
+  font-size: 31rpx;
+  vertical-align: middle;
+  color: #A5A5A4;
+}
+
+.controAn{
+   float: right;
+   height: 80rpx;
+   margin-right: 5%;
+   margin-top: 3.5%;
+   display: flex;
+  flex-direction: center;
+  justify-content: center;
+}
+.controAn text{
+  margin-top: 2%; 
+  font-size: 31rpx;
+  vertical-align: middle;
+  color: #A5A5A4;
+}
+.btn {
+  position: absolute;
+  left: 7%;
+  bottom: 50px;
+  width: 86%;
+}
+
+button::after {
+  border: none;
+}
+
+.btn button {
+  border-radius: 90rpx;
+  background: linear-gradient(90deg, rgba(255, 230, 30, 1), rgba(255, 207, 16, 1));
+  box-shadow: 0px 7px 21px 0px rgba(165, 165, 165, 0.39);
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+}
+/* 单选钮样式 */
+radio {
+  transform:scale(0.9);
+}
+

@@ -1,0 +1,72 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "wxe011b76e1a578fcd",
+	"projectname": "ji_ui",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": 0,
+					"name": "搜索地址",
+					"pathName": "pages/address/new/new",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "地址",
+					"pathName": "pages/address/choose/choose",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/machine/Printer/index",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "新地址",
+					"pathName": "pages/address/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/order/map/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

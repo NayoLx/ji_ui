@@ -1,0 +1,11 @@
+<!--pages/order/map/index.wxml-->
+<view>
+<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16"  markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange"  show-location style="width: 100%; height: {{winHeight - 120}}px"></map>
+</view>
+
+<view class='down'>
+  <view class='btn' >
+  <text>目前已通知\t<text>{{markers.length}}</text>\t名工程师</text>
+    <button >订单列表</button>
+  </view>
+</view>

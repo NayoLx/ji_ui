@@ -1,0 +1,25 @@
+<!--pages/address/choose/choose.wxml-->
+
+<view class='head'>
+  <view class='city'>
+    <view class='cityname'>
+      {{currentCity}}
+    </view>
+    <image src='../../../i/down.png'></image>
+  </view>
+  <view class='search'>
+    <image src='../../../i/search@2x.png' class='Timage'></image>
+  </view>
+  <input placeholder='{{locationAddress}}' id='keyword' bindinput='keywordInput'></input>
+</view>
+
+
+<view class='contaner'>
+  <text class='navname'>当前位置</text>
+  <block wx:for='{{address}}' wx:for-index='key'>
+    <button class='locat' bindtap='setdata' id="{{key}}">
+      <text>{{item.title}}\n </text>
+      <text>{{item.address}}</text>
+    </button>
+  </block>
+</view>

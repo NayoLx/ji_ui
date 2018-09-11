@@ -1,0 +1,24 @@
+<!--pages/address/new/new.wxml-->
+<view class='contaner'>
+   <view class='area'>
+     <text>地址</text>
+     <input wx:if="{{address.title != ''}}" class='line' value='{{address.title}}' bindtap='locat'  placeholder='城市/小区/写字楼' placeholder-class="place-holder" disabled= 'true' ></input>
+     <input wx:else class='line' placeholder='城市/小区/写字楼' placeholder-class="place-holder" bindtap='locat' disabled= 'true' ></input>
+   </view>
+   <view class='area'>
+     <text>详细门牌</text>
+     <input class='line' placeholder='例如：10号楼1002室' placeholder-class="place-holder" id='door' bindinput='onDoorinput'></input>
+   </view>
+   <view class='area'>
+     <text>联系号码</text>
+     <input class='line' placeholder='工程师将以此联系你' placeholder-class="place-holder" id='phone' bindinput='onPhoneinput'></input>
+   </view>
+   <view class='area'>
+     <text>姓名</text>
+     <input class='line' placeholder='联系人姓名' placeholder-class="place-holder" id='name' bindinput='onNameinput'></input>
+   </view>
+</view>
+
+<view class='btn'>
+  <button bindtap='saveadd'>保存</button>
+</view>

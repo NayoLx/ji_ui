@@ -1,0 +1,93 @@
+page{  
+  background: #f5f5f5;  
+}  
+/*总体主盒子*/  
+
+.container {  
+  position: absolute;  
+  width: 100%;  
+  height: 100%;  
+  background-color: #fff;  
+
+}
+.scrollview{
+  position: absolute;  
+  top: 0;  
+  left: 0;
+  display: inline-block;  
+  width: 25%;  
+  height: 100%;
+  background: #f5f5f5;
+   text-align: center;  
+   
+}
+.scrollview2{ 
+  position: absolute;  
+  top: 0;  
+  right: 0;  
+  flex: 1;   
+  width: 75%;  
+  height: 100%; 
+  padding: 10px;  
+  box-sizing: border-box;  
+  background: #fff; 
+
+}
+ 
+/*左侧栏list的item*/  
+.scrollview .nav_left_items{  
+  height: 130rpx;  
+  line-height: 40rpx;   
+  border-bottom: 1px solid #dedede;  
+  padding: 0 10rpx 0 10rpx;
+  font-size: 15px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight:500;
+}  
+/*左侧栏list的item被选中时*/  
+.scrollview .nav_left_items.active{  
+  background: #fff;  
+}  
+
+  
+/*右侧栏list的item*/  
+.scrollview2 .nav_right_items{  
+  float: left;  
+  width: 170rpx;  
+  height: 146px;  
+  text-align: center;  
+}  
+
+.scrollview2 .nav_right_items image{  
+  /*被图片设置宽高*/  
+  width: 120rpx;  
+  height: 60px;  
+  margin-top: 15px;  
+}  
+
+.scrollview2 .nav_right_items text{  
+  /*给text设成块级元素*/  
+  display: block;  
+  margin-top: 10px;  
+  font-size: 14px;  
+  color: black;
+  overflow: hidden;  
+  white-space: nowrap;  
+  text-overflow: ellipsis;
+  font-family:PingFang-SC-Regular;
+  font-weight:400;  
+} 
+
+.nodata_text
+{
+  color: black;
+  font-size: 14px;  
+  text-align: center;  
+} 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

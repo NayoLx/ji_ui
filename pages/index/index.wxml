@@ -1,0 +1,34 @@
+<!--pages/repair/index.wxml-->
+<view class='list'>
+  <swiper indicator-dots="{{false}}" autoplay="{{true}}" previous-margin="{{'50rpx'}}" next-margin="{{'50rpx'}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='wxtable' style='margin-top:3%'>
+  <text>我要报修</text>
+  <view class='wxtr'>
+    <view class='wxNeed' bindtap='Printer'><image src='/i/icon/Printer@2x.png' style='margin-top: 3%; width: 120rpx;'></image></view>
+    <view class='wxNeed'><image src='/i/icon/Copier@2x.png' style='margin-top: 3%; width: 105rpx;'></image></view>
+  </view>
+  <view class='wxtr'>
+    <view class='wxNeed'><image src='/i/icon/Computer@2x.png' style='margin-top: 3%; width: 120rpx;'></image></view>
+    <view class='wxNeed'><image src='/i/icon/more@2x.png' style='margin-top: 3%; width: 136rpx;'></image></view>
+  </view>
+</view>
+
+<view class='wxtable' style='margin-top:4%'>
+  <text>极速报修</text>
+  <view class='wxtr'>
+    <view class='wxSpeed'><image src='/i/icon/Scan@2x.png' class='img'></image><text>扫码保修</text></view>
+    <view class='wxSpeed'><image src='/i/icon/equipment@2x.png' class='img'></image><text>我的设备</text></view>
+  </view>
+</view>
+
+<view class='logo_down'>
+  <image src='/i/service@3x.png'></image>
+</view>

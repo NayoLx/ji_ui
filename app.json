@@ -9,7 +9,8 @@
     "pages/order/index",
     "pages/order/map/index",
     "pages/my/index",
-    
+    "pages/my/myequip/index",
+    "pages/machine/repairtpl/index",
     "pages/logs/logs",
     "pages/machine/Copier/index",
     "pages/machine/Computer/index"

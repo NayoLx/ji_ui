@@ -14,7 +14,7 @@ Page({
     name: '',
     add: '',
     address: [],
-    edit_address: []
+    editAddress: []
   },
 
   toChoose: function(e) {
@@ -25,17 +25,17 @@ Page({
   /**
    * 获取inputd的值
    */
-  onDoorinput: function(e) {
+  onDoorInput: function(e) {
     this.setData({
       door: e.detail.value
     })
   },
-  onPhoneinput: function(e) {
+  onPhoneInput: function(e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  onNameinput: function(e) {
+  onNameInput: function(e) {
     this.setData({
       name: e.detail.value
     })
@@ -68,9 +68,9 @@ Page({
         success: function (res) {
           // success
           that.setData({
-            edit_address: res.data
+            editAddress: res.data
           })
-          console.log(that.data.edit_address)
+          console.log(that.data.editAddress)
         }
       })
     }

@@ -7,18 +7,18 @@
    </view>
    <view class='area'>
      <text>详细门牌</text>
-     <input class='line' placeholder='例如：10号楼1002室' placeholder-class="place-holder" id='door' bindinput='onDoorinput'></input>
+     <input class='line' placeholder='例如：10号楼1002室' placeholder-class="place-holder" id='door' bindinput='onDoorInput'></input>
    </view>
    <view class='area'>
      <text>联系号码</text>
-     <input class='line' placeholder='工程师将以此联系你' placeholder-class="place-holder" id='phone' bindinput='onPhoneinput'></input>
+     <input class='line' placeholder='工程师将以此联系你' placeholder-class="place-holder" id='phone' bindinput='onPhoneInput'></input>
    </view>
    <view class='area'>
      <text>姓名</text>
-     <input class='line' placeholder='联系人姓名' placeholder-class="place-holder" id='name' bindinput='onNameinput'></input>
+     <input class='line' placeholder='联系人姓名' placeholder-class="place-holder" id='name' bindinput='onNameInput'></input>
    </view>
 </view>
 
 <view class='btn'>
-  <button bindtap='saveadd'>保存</button>
+  <button bindtap='saveAdd'>保存</button>
 </view>

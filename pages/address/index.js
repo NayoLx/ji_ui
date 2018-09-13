@@ -11,60 +11,7 @@ Page({
     winWidth: '',
     winHeight: '',
     aa:'',
-    allAdd: {
-      address: [{
-        addid: 0,
-        checked: true,
-        name: '张女士',
-        phone: '18700006363',
-        door: '东塔楼1701号',
-        province: '广东省',
-        city: '深圳市',
-        district: '南山区',
-        title: '科技软件园',
-        detail_address: '广东省深圳南山市区科技软件园东塔楼1701号',
-        location: {}
-      },
-      {
-        addid: 1,
-        checked: false,
-        name: '张女士',
-        phone: '18700006363',
-        door: '东塔楼1702',
-        province: '广东省',
-        city: '深圳市',
-        district: '南山区',
-        title: '科技软件园',
-        detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
-        location: {}
-        },
-        {
-          addid: 2,
-          checked: false,
-          name: '张女士',
-          phone: '18700006363',
-          door: '东塔楼1702',
-          province: '广东省',
-          city: '深圳市',
-          district: '南山区',
-          title: '科技软件园',
-          detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
-          location: {}
-        },
-        {
-          addid: 3,
-          checked: false,
-          name: '张女士',
-          phone: '18700006363',
-          door: '东塔楼1702',
-          province: '广东省',
-          city: '深圳市',
-          district: '南山区',
-          title: '科技软件园',
-          detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
-          location: {}
-        }]
-    }
+    allAdd: {}
   },
 
   toNewadd: function(e) {
@@ -76,10 +23,10 @@ Page({
   /**
    * 编辑
    */
-  onEdit:function(options){
+  onEdit: function(options) {
     let addid = options.currentTarget.dataset.id
     console.log(addid)
-    for(var i=0; i < this.data.allAdd.address.length; i++){
+    for(var i=0; i < this.data.allAdd.address.length; i++) {
       if (this.data.allAdd.address[i].addid == addid){
         console.log('Yes')
         wx.setStorage({
@@ -99,8 +46,7 @@ Page({
         wx.navigateTo({
           url: 'edit/edit',
         })
-      }
-      else {
+      } else {
         console.log('No')
       }
     }
@@ -152,14 +98,71 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+     this.getAllAddress()
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取数据
    */
-  onReady: function() {
-
+  getAllAddress: function (options) {
+    var self = this
+    var data = {
+      address: [{
+      addid: 0,
+      checked: true,
+      name: '张女士',
+      phone: '18700006363',
+      door: '东塔楼1701号',
+      province: '广东省',
+      city: '深圳市',
+      district: '南山区',
+      title: '科技软件园',
+      detail_address: '广东省深圳南山市区科技软件园东塔楼1701号',
+      location: {}
+    },
+      {
+        addid: 1,
+        checked: false,
+        name: '张女士',
+        phone: '18700006363',
+        door: '东塔楼1702',
+        province: '广东省',
+        city: '深圳市',
+        district: '南山区',
+        title: '科技软件园',
+        detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
+        location: {}
+      },
+      {
+        addid: 2,
+        checked: false,
+        name: '张女士',
+        phone: '18700006363',
+        door: '东塔楼1702',
+        province: '广东省',
+        city: '深圳市',
+        district: '南山区',
+        title: '科技软件园',
+        detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
+        location: {}
+      },
+      {
+        addid: 3,
+        checked: false,
+        name: '张女士',
+        phone: '18700006363',
+        door: '东塔楼1702',
+        province: '广东省',
+        city: '深圳市',
+        district: '南山区',
+        title: '科技软件园',
+        detail_address: '广东省深圳市南山区科技软件园东塔楼1702',
+        location: {}
+      }]
+    }
+    self.setData({
+      allAdd: data
+    })
   },
 
   /**

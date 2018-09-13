@@ -17,7 +17,7 @@
 <view class='contaner'>
   <text class='navname'>当前位置</text>
   <block wx:for='{{address}}' wx:for-index='key'>
-    <button class='locat' bindtap='setdata' id="{{key}}">
+    <button class='locat' bindtap='setAddData' id="{{key}}">
       <text>{{item.title}}\n </text>
       <text>{{item.address}}</text>
     </button>

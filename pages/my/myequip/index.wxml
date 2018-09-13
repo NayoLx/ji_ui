@@ -1,0 +1,22 @@
+<!--pages/my/myequip/index.wxml-->
+
+<scroll-view>
+<block wx:for="{{equipment}}">
+  <view class='contain'>
+    <view class='head'>
+      <image src='{{item.image}}'></image>
+      <text>{{item.name}}
+        <text>历史报修：{{item.times}}次</text>
+      </text>
+    </view>
+    <view class='btn'>
+      <button class='firstbtn'>
+        删除设备
+      </button>
+      <button>
+        立即维修
+      </button>
+    </view>
+  </view>
+  </block>
+</scroll-view>

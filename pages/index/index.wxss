@@ -65,6 +65,7 @@ margin: 0 auto;
   padding: 10rpx;
   padding-top: 20rpx;
 }
+
 .wxSpeed .img{
   width: 60rpx;
   height: 59rpx;
@@ -80,6 +81,14 @@ margin: 0 auto;
   position:relative;
   left: 115rpx;
   top: 6rpx;
+}
+.wxSpeed .imag{
+  width: 170rpx;
+  height: 32rpx;
+  float: right;
+  position: relative;
+  margin-left: 130rpx;
+  margin-top: 15rpx; 
 }
 
 .logo_down{

@@ -24,7 +24,12 @@ Page({
       url: '../machine/Printer/index',
     })
   },
-
+  
+  toMyequip: function(e) {
+    wx.navigateTo({
+      url: '../my/myequip/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

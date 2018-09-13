@@ -1,0 +1,71 @@
+<!--pages/machine/repairtpl/index.wxml-->
+
+<!-- <template > -->
+<scroll-view scroll-y='true' style='height:{{winHeight-100}}px'>
+  <view class='contain'>
+    <view class='equip'>
+      <text>报修设备</text>
+      <text class='name'>{{repair}} \t\t></text>
+    </view>
+    <view class='program'>
+      <text>故障问题</text>
+      <view wx:for="{{items}}" wx:key="{{this}}" data-id="{{index}}" class="checkbox {{item.checked?'checkedActive':''}}" bindtap='userCheck'>
+        {{item.value}}
+      </view>
+      <!-- <image src='../../../i/repair/up@2x.png' wx:if="{{items.length%4 == 1}}" class='imag'></image> -->
+      <image src='../../../i/repair/up@2x.png'></image>
+    </view>
+    <view class='another'>
+      <text>其他问题</text>
+      <input placeholder='请描述其他问题，限20字' placeholder-style='font-size:30rpx'></input>
+    </view>
+    <view class='uploadImage'>
+      <text>上传图片<text class='tet'>(限5张)</text></text>
+      <image src='{{src}}'></image>
+      <image src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg'></image>
+
+    </view>
+  </view>
+
+  <view class='contain'>
+    <view class='add'>
+      <text>上门地址</text>
+    </view>
+    <view class='address'>
+      <image src="../../../i/repair/loact@2x.png"></image>
+      <input placeholder='暂无地址' id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true'></input>
+      <view>
+        <button bindtap='toChooseAdd'>选择地址</button>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class='btn'>
+  <button bindtap='go'>提交</button>
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap='close'></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <scroll-view scroll-y="true" style='height: 100%;'>
+    <view class='useralert_quanyi'>确认报修</view>
+    <view class="data">
+      <text>报修设备:</text>
+      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
+      <text>上门地址:</text>
+      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
+      <text>联系电话:</text>
+      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
+    </view>
+    <view class="tip">
+      <text>下单提示:\n</text>
+      <text class='tips'>1.工程师接单20分钟后，取消订单将补偿工程师上门费30元；\n<text >2.平台完成订单，获得15天质保承诺；\n3.请勿让工程师带走设备维修，由此产生的风险平台概不负责。</text></text>
+    </view>
+  </scroll-view>
+
+  <view class="btn_ok">
+    <button class='btn_no' bindtap='close'>取消</button>
+    <button class='btn_yes'>确定</button>
+  </view>
+</view>
+
+<!-- </template> -->

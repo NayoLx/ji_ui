@@ -84,7 +84,7 @@ Page({
     })
   },
 
-  setdata:function(e){
+  setAddData:function(e){
     var id = e.currentTarget.id;
     this.setData({
       keyy: id

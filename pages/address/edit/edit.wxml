@@ -4,21 +4,21 @@
    <view class='area'>
      <text>地址</text>
      <!-- <input wx:if="{{address.title != ''}}" class='line' value='{{address.title}}' bindtap='toChoose'  placeholder='城市/小区/写字楼' placeholder-class="place-holder" disabled= 'true' ></input> -->
-     <input wx:if = "{{edit_address.title != ''}}" class = 'line' value = '{{edit_address.title}}'  bindtap = 'toChoose'  placeholder = '城市/小区/写字楼' placeholder-class = "place-holder" disabled = 'true' ></input>
+     <input wx:if = "{{editAddress.title != ''}}" class = 'line' value = '{{editAddress.title}}'  bindtap = 'toChoose'  placeholder = '城市/小区/写字楼' placeholder-class = "place-holder" disabled = 'true' ></input>
      <input wx:elif = "{{address.title != ''}}" class = 'line' value = '{{address.title}}' bindtap = 'toChoose'  placeholder = '城市/小区/写字楼' placeholder-class = "place-holder" disabled = 'true' ></input>
      <input wx:else class = 'line' placeholder = '城市/小区/写字楼' placeholder-class = "place-holder" bindtap = 'toChoose' disabled = 'true' ></input>
    </view>
    <view class='area'>
      <text>详细门牌</text>
-     <input class = 'line' placeholder = '例如：10号楼1002室' placeholder-class = "place-holder"  id = 'door' bindinput = 'onDoorinput' value = '{{edit_address.door}}'></input>
+     <input class = 'line' placeholder = '例如：10号楼1002室' placeholder-class = "place-holder"  id = 'door' bindinput = 'onDoorInput' value = '{{editAddress.door}}'></input>
    </view>
    <view class='area'>
      <text>联系号码</text>
-     <input class = 'line' placeholder = '工程师将以此联系你' placeholder-class = "place-holder" id = 'phone' bindinput = 'onPhoneinput' value = '{{edit_address.phone}}'></input>
+     <input class = 'line' placeholder = '工程师将以此联系你' placeholder-class = "place-holder" id = 'phone' bindinput = 'onPhoneInput' value = '{{editAddress.phone}}'></input>
    </view>
    <view class='area'>
      <text>姓名</text>
-     <input class = 'line' placeholder = '联系人姓名' placeholder-class = "place-holder" id = 'name' bindinput = 'onNameinput' value = '{{edit_address.name}}'></input>
+     <input class = 'line' placeholder = '联系人姓名' placeholder-class = "place-holder" id = 'name' bindinput = 'onNameInput' value = '{{editAddress.name}}'></input>
    </view>
 </view>
 

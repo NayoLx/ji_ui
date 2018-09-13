@@ -1,6 +1,15 @@
 <!--pages/order/map/index.wxml-->
 <view>
-<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16"  markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange"  show-location style="width: 100%; height: {{winHeight - 120}}px"></map>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: {{winHeight}}px">
+
+    <!-- <cover-view class='down'>
+      <cover-view class='btn'>
+        <cover-view class='covertext'>目前已通知 {{markers.length}} 名工程师</cover-view>
+        <button>订单列表</button>
+      </cover-view>
+    </cover-view> -->
+
+  </map>
 </view>
 
 <view class='down'>

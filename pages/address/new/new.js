@@ -24,17 +24,17 @@ Page({
   /**
    * 获取inputd的值
    */
-  onDoorinput: function (e) {
+  onDoorInput: function (e) {
     this.setData({
       door: e.detail.value
     })
   },
-  onPhoneinput: function (e) {
+  onPhoneInput: function (e) {
     this.setData({
       phone: e.detail.value
     })
   },
-  onNameinput: function (e) {
+  onNameInput: function (e) {
     this.setData({
       name: e.detail.value
     })
@@ -78,7 +78,7 @@ Page({
     }
   },
 
-  saveadd: function (e) {
+  saveAdd: function (e) {
     var a = wx.getStorageSync("address")
     if (a == '') {
       toast.show('地址未选择，我们找不到你的噢')

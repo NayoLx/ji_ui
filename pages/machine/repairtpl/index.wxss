@@ -1,0 +1,280 @@
+/* pages/machine/repairtpl/index.wxss */
+
+.contain {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 20rpx solid #f2f2f2;
+}
+
+.equip {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #dfdfdf;
+  border-top: 1rpx solid #dfdfdf;
+}
+
+text {
+  font-size: 35rpx;
+  font-weight: 600;
+}
+
+.equip .name {
+  float: right;
+  margin-left: 68%;
+  font-weight: 500;
+}
+
+.program {
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.program text {
+  width: 100%;
+  float: left;
+  margin-bottom: 10rpx;
+}
+
+.program image {
+  width: 30rpx;
+  height: 15rpx;
+  margin-right: 100%;
+  margin-left: 46%;
+}
+
+/* .program .imag {
+  width: 30rpx;
+  height: 15rpx;
+  
+  margin-right: 100%;
+  margin-left: 46%;
+} */
+
+.checkbox {
+  width: 120rpx;
+  height: 40rpx;
+  float: left;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 26rpx;
+  background: #f4f4f4;
+  border-radius: 4px;
+  margin: 10rpx 20rpx 10rpx 20rpx;
+  padding: 10rpx;
+}
+
+.checkedActive {
+  background: #ffe511;
+  color: #000;
+}
+
+.another {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.another text {
+  font-weight: 500;
+}
+
+.another input {
+  margin-left: 5%;
+}
+
+.uploadImage {
+  width: 100%;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.uploadImage text {
+  width: 100%;
+  float: left;
+}
+
+.uploadImage .tet {
+  color: #b1aaaa;
+  padding-top: 5rpx;
+  width: 79%;
+  font-size: 29rpx;
+  font-weight: 500;
+  float: right;
+}
+
+.uploadImage image {
+  margin: 25rpx 25rpx 25rpx 0;
+  width: 120rpx;
+  height: 120rpx;
+  float: left;
+}
+
+.add {
+  width: 100%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+
+.address {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0 30rpx 30rpx;
+}
+
+.address image {
+  width: 38rpx;
+  height: 43rpx;
+  margin-top: 5rpx;
+}
+
+.address input {
+  width: 65%;
+  margin-left: 3%;
+}
+
+.address button {
+  float: right;
+  width: 165rpx;
+  height: 58rpx;
+  border-radius: 33px;
+  background-color: white;
+  border: 1px solid #f9b002;
+  line-height: 50rpx;
+  font-size: 27rpx;
+  color: #f9b002;
+}
+
+.pstyle {
+  font-size: 32rpx;
+  color: #8e8e8e;
+}
+
+.btn {
+  position: absolute;
+  left: 20%;
+  bottom: 80rpx;
+  width: 60%;
+}
+
+button::after {
+  border: none;
+}
+
+.btn button {
+  border-radius: 90rpx;
+  /* background: linear-gradient(90deg, rgba(255, 230, 30, 1), rgba(255, 207, 16, 1)); */
+  background-color: #cacbcd;
+  /* box-shadow: 0px 14rpx 42px 0px rgba(165, 165, 165, 0.39); */
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 550rpx;
+  height: 750rpx;
+  position: fixed;
+  top: 20%;
+  z-index: 9999;
+  margin: 0rpx 100rpx 185rpx 100rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.useralert_quanyi {
+  font-size: 35rpx;
+  color: #010101;
+  margin-top: 20rpx;
+  font-weight:bold;
+  text-align: center;
+ margin-bottom: 20rpx;
+
+}
+.data{
+  width: 100%;
+  height: 180rpx;
+  text-align: center;
+  padding: 20rpx;
+  padding-bottom: 30rpx;
+  margin-top: 20rpx;
+  margin: 0 auto;
+}
+.data text{
+  width: 30%;
+  float: left;
+  font-size: 30rpx;
+  padding-bottom: 25rpx;
+}
+.data input{
+  width: 60%;
+  float: right;
+  padding-right: 10%;
+  padding-bottom: 13rpx;
+}
+.tip{
+  width: 90%;
+  text-align: left;
+  padding: 20rpx;
+  margin-top: 30rpx;
+  margin: 0 auto;
+}
+ .tips{
+  font-size: 26rpx;
+}
+ .tips text{
+   font-size: 26rpx;
+   color: #5F5F61;
+}
+.btn_ok {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font: 20px "microsoft yahei";
+  display: flex;
+  flex: row;
+}
+
+.btn_no {
+  float: left;
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  border: 1rpx solid #f4f4f4;
+}
+
+.btn_yes {
+  float: right;
+  width: 50%;
+  text-align: center;
+  background-color: white;
+  border: 1rpx solid #f4f4f4;
+  color: #ff9600;
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

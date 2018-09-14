@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -73,9 +73,16 @@
 					"query": ""
 				},
 				{
+					"id": 6,
+					"name": "评价",
+					"pathName": "pages/order/evaluate/index",
+					"query": ""
+				},
+				{
 					"id": -1,
-					"name": "我的设备",
-					"pathName": "pages/my/myequip/index"
+					"name": "质保",
+					"pathName": "pages/order/quality/index",
+					"query": ""
 				}
 			]
 		}

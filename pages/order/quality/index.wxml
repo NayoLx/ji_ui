@@ -1,0 +1,23 @@
+<!--pages/order/quality/index.wxml-->
+
+<view class='rea'>
+  <text>申请质保原因</text>
+  <input placeholder='描述申请质保的原因' placeholder-class='pinput'></input>
+</view>
+<view class='phone'>
+  <text>照片凭证</text>
+  <block wx:if='{{src}}'>
+        <block wx:for='{{src}}' wx:for-index="idx">
+          <view>
+            <image src='{{item}}' class="imag"></image>
+            <image src='../../../i/repair/close@2x.png' class='close' bindtap='closeImg' id="{{idx}}"></image>
+          </view>
+        </block>
+      </block>
+
+      <image wx:if='{{src == null || src.length<4}}' src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg' class="imag"></image>
+      <image wx:else src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg' style='display:none' class="imag"></image>
+</view>
+<view class='btn'>
+  <button>提交</button>
+</view>

@@ -1,0 +1,61 @@
+/* pages/order/quality/index.wxss */
+.rea{
+  width: 100%;
+  padding: 20rpx;
+  height: 200rpx;
+  border-bottom: 20rpx solid #F1F2F5;
+}
+.rea text{
+  color: #090909;
+  font-size: 36rpx;
+  font-weight: 400;
+}
+
+.rea input{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.pinput{
+  font-size: 30rpx
+}
+.phone{
+  width: 100%;
+  padding: 20rpx;
+  height: 260rpx;
+  border-bottom: 1rpx solid #F1F2F5;
+}
+.phone text{
+  width: 100%;
+   color: #090909;
+  font-size: 36rpx;
+  font-weight: 400;
+   float: left;
+}
+.imag {
+  margin: 25rpx 25rpx 25rpx 0;
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 40rpx;
+  float: left;
+}
+.close{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  position: relative;
+  right: 35rpx;
+  top:15rpx;
+}
+.btn{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+.btn button {
+  height: 95rpx;
+  background: linear-gradient(90deg, rgba(255, 230, 30, 1), rgba(255, 207, 16, 1));
+  box-shadow: 0px 14rpx 42px 0px rgba(165, 165, 165, 0.39);
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+}

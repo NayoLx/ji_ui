@@ -8,6 +8,8 @@
     "pages/address/edit/edit",
     "pages/order/index",
     "pages/order/map/index",
+    "pages/order/quality/index",
+    "pages/order/evaluate/index",
     "pages/my/index",
     "pages/my/myequip/index",
     "pages/machine/repairtpl/index",

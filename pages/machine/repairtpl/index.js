@@ -8,6 +8,7 @@ Page({
     program: [],
     winWidth: 0,
     winHeight: 0,
+    open:false,
     items: []
   },
 
@@ -18,7 +19,15 @@ Page({
   },
   
   downMore: function() {
+    this.setData({
+      open: !this.data.open
+    })
 
+  },
+
+  closeImg: function(e) {
+    var i = e.currentTarget.id;
+    console.log(e.currentTarget.id)
   },
 
   upLoadImg: function(e) {
@@ -83,6 +92,11 @@ Page({
         "id": 7,
         "value": '卡纸',
 
+      },
+      {
+        "id": 8,
+        "value": '卡纸',
+
       }
       ]
       this.setData({
@@ -91,10 +105,12 @@ Page({
   },
 
   go: function () {
+    
     this.setData({
       showModal: true
     })
   },
+
   close: function() {
     this.setData({
       showModal: false

@@ -1,0 +1,64 @@
+<!--pages/order/evaluate/index.wxml-->
+<!-- <template> -->
+
+<!-- 评价 -->
+<view class='contain'>
+  <view class='firtext'>
+    <text>你对这次服务还满意吗？</text>
+  </view>
+  <view class='eval'>
+    <text class='text1'>速度</text>
+    <block wx:for="{{one_2}}" wx:key="index">
+      <image catchtap='speed_xin' id='{{index+1}}' data-in='use_sc2' src='../../../i/my/lable_pre@2x.png'></image>
+    </block>
+    <block wx:for="{{two_2}}" wx:key="index">
+      <image catchtap='speed_xin' id='{{index+1}}' data-in='use_sc' src='../../../i/my/lable@2x.png'></image>
+    </block>
+    <text class='te'>{{one_2}}星</text>
+  </view>
+  <view class='eval'>
+
+    <text class='text1'>态度</text>
+    <block wx:for="{{att}}" wx:key="index">
+      <image catchtap='att_xin' id='{{index+1}}' data-in='att_sc2' src='../../../i/my/lable_pre@2x.png'></image>
+    </block>
+    <block wx:for="{{att_2}}" wx:key="index">
+      <image catchtap='att_xin' id='{{index+1}}' data-in='att_sc' src='../../../i/my/lable@2x.png'></image>
+    </block>
+    <text class='te'>{{att}}星</text>
+  </view>
+  <view class='eval'>
+    <text class='text1'>技术</text>
+    <block wx:for="{{tech}}" wx:key="index">
+      <image catchtap='tech_xin' id='{{index+1}}' data-in='tech_sc2' src='../../../i/my/lable_pre@2x.png'></image>
+    </block>
+    <block wx:for="{{tech_2}}" wx:key="index">
+      <image catchtap='tech_xin' id='{{index+1}}' data-in='tech_sc' src='../../../i/my/lable@2x.png'></image>
+    </block>
+    <text class='te'>{{tech}}星</text>
+  </view>
+</view>
+<view class='yin'>
+  <text>你对维修师傅的印象是怎样的？</text>
+    <view  wx:for="{{yins}}" wx:if="{{index<8}}" wx:key="{{this}}" data-id="{{index}}" class="checkbox {{item.checked?'checkedActive':''}}" bindtap='userYinCheck'>
+      {{item.value}}
+    </view>
+</view>
+
+<view class='say'>
+  <text>你想对维修师傅说些什么？</text>
+  <input></input>
+</view>
+<!-- 匿名 -->
+<view class='ni'>
+  <image src='../../../i//my/chose@2x.png'></image>
+  <text>匿名</text>
+  <view class='tishi'>
+    <text>温馨提示：如果您15天内未评价，系统默认5星好评</text>
+  </view>
+</view>
+
+<view class='btn'>
+  <button>提交评价</button>
+</view>
+<!-- </template> -->

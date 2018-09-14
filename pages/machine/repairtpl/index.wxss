@@ -15,6 +15,11 @@
   border-bottom: 1rpx solid #dfdfdf;
   border-top: 1rpx solid #dfdfdf;
 }
+.equip image{
+  width: 18rpx;
+  height: 30rpx;
+  margin-top: 9rpx;
+}
 
 text {
   font-size: 35rpx;
@@ -23,8 +28,9 @@ text {
 
 .equip .name {
   float: right;
-  margin-left: 68%;
+  margin-left: 40%;
   font-weight: 500;
+  margin-right: 13rpx;
 }
 
 .program {
@@ -46,13 +52,15 @@ text {
   margin-left: 46%;
 }
 
-/* .program .imag {
-  width: 30rpx;
-  height: 15rpx;
-  
-  margin-right: 100%;
-  margin-left: 46%;
-} */
+
+.display_show{
+    display: block;
+    animation:1s;
+}
+.display_none{
+    display: none;
+    animation:1s;
+}
 
 .checkbox {
   width: 120rpx;
@@ -82,10 +90,14 @@ text {
 
 .another text {
   font-weight: 500;
+  font-size: 30rpx;
+  margin-top: 8rpx;
 }
 
 .another input {
   margin-left: 5%;
+  width: 79%;
+  
 }
 
 .uploadImage {
@@ -108,13 +120,21 @@ text {
   float: right;
 }
 
-.uploadImage image {
+.uploadImage .imag {
   margin: 25rpx 25rpx 25rpx 0;
   width: 120rpx;
   height: 120rpx;
+  margin-top: 30rpx;
   float: left;
 }
-
+.close{
+  width: 30rpx;
+  height: 30rpx;
+  float: left;
+  position: relative;
+  right: 35rpx;
+  top:15rpx;
+}
 .add {
   width: 100%;
   padding: 20rpx;
@@ -192,7 +212,7 @@ button::after {
   width: 550rpx;
   height: 750rpx;
   position: fixed;
-  top: 20%;
+  top: 15%;
   z-index: 9999;
   margin: 0rpx 100rpx 185rpx 100rpx;
   background-color: #fff;

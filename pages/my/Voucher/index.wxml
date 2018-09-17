@@ -1,0 +1,72 @@
+<!--pages/my/Voucher/index.wxml-->
+
+<view wx:if="{{!swiper}}">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">未使用</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已使用</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已过期</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style='height:{{winHeight - 40}}px' bindchange="bindChange">
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view class='table' style='height:{{winHeight - 50}}px' >
+          <block wx:for="{{voucher}}" wx:for-index="idx">
+            <block wx:if="{{item.using == false && item.timeOut == false}}">
+              <view class='voucher' bindtap='getVoucherId' id="{{idx}}">
+                <text class='tex'>￥<text>{{item.value}}</text></text>
+              </view>
+              <view class='wen' bindtap='getVoucherId' id="{{idx}}">
+                <text class='wen1'>{{item.title}}\n</text>
+                <text class='wen2'>{{item.timeTitle}}\n </text>
+                <text class='wen2'>{{item.HowUse}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view class='table' style='height:{{winHeight - 90}}px' >
+          <block wx:for="{{voucher}}" wx:for-index="idx">
+            <block wx:if="{{item.using == true}}">
+              <view class='voucher' bindtap='getVoucherId' id="{{idx}}">
+                <text class='tex'>￥<text>{{item.value}}</text></text>
+              </view>
+              <view class='wen' bindtap='getVoucherId' id="{{idx}}">
+                <text class='wen1'>{{item.title}}\t</text>
+                <image src='../../../i/my/use@2x.png'></image>
+                <text class='wen2'>{{item.timeTitle}}\n </text>
+                <text class='wen2'>{{item.HowUse}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view class='table' style='height:{{winHeight - 90}}px'  >
+          <block wx:for="{{voucher}}" wx:for-index="idx">
+            <block wx:if="{{item.timeOut == true}}">
+              <view class='voucher2' bindtap='getVoucherId' id="{{idx}}">
+                <text class='tex'>￥<text>{{item.value}}</text></text>
+              </view>
+              <view class='wen' bindtap='getVoucherId' id="{{idx}}">
+                <text class='wen1'>{{item.title}}\t</text>
+                <image src='../../../i/my/out@2x.png'></image>
+                <text class='wen2'>{{item.timeTitle}}\n </text>
+                <text class='wen2'>{{item.HowUse}}</text>
+              </view>
+            </block>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+  </swiper>
+</view>

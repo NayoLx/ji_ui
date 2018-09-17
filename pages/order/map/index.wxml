@@ -15,6 +15,7 @@
 <view class='down'>
   <view class='btn' >
   <text>目前已通知\t<text>{{markers.length}}</text>\t名工程师</text>
-    <button >订单列表</button>
+    <button class='butto2'>费用查询</button>
+    <button class='button1'>订单列表</button>
   </view>
 </view>

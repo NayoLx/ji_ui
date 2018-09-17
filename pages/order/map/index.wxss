@@ -6,7 +6,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-
+  background-color: white;
   border-radius: 100% 100% 0 0/35% 35% 0 0;
   z-index: 99999;
   
@@ -46,15 +46,27 @@ button::after {
   border: none;
 }
 
-.btn button {
+.btn .button1 {
   position: fixed;
-  left: 26%;
+  left: 55%;
   bottom: 5%;
-  width: 50%;
+  width: 40%;
   border-radius: 90rpx;
   background: linear-gradient(90deg, rgba(255, 230, 30, 1), rgba(255, 207, 16, 1));
   box-shadow: 0rpx 14rpx 42rpx 0rpx rgba(165, 165, 165, 0.39);
   font-family: MicrosoftYaHei;
   font-weight: 400;
   z-index: 999999;
+}
+.btn .butto2 {
+  position: fixed;
+  left: 5%;
+  bottom: 5%;
+  width: 40%;
+  border-radius: 90rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  z-index: 999999;
+  border: 2rpx solid #AAAAAA;
+  background-color: white;
 }

@@ -11,6 +11,7 @@
     "pages/order/quality/index",
     "pages/order/evaluate/index",
     "pages/my/index",
+    "pages/my/Voucher/index",
     "pages/my/myequip/index",
     "pages/machine/repairtpl/index",
     "pages/logs/logs",

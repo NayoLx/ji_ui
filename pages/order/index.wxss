@@ -1,1 +1,38 @@
 /* pages/order/index.wxss */
+
+
+/**index.wxss**/
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 36px;
+
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33%;
+  color: #7a7a7a;
+}
+
+.on {
+  color: #000004;
+  border-bottom: 8rpx solid #fde800;
+}
+swiper-items{
+  height: 100%;
+  
+}
+.scroll-views{
+  height: 100%;
+  
+}
+.swiper-box {
+  display: block;
+  min-height: 100%;
+  height: 2000rpx;
+  width: 100%;
+  background-color: #f1f2f5;
+}

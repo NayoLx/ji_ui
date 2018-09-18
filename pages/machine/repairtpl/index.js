@@ -9,7 +9,14 @@ Page({
     winWidth: 0,
     winHeight: 0,
     open:false,
+    src: [],
     items: []
+  },
+
+  back: function() {
+    wx:wx.navigateBack({
+      delta: 1,
+    })
   },
 
   toChooseAdd: function(e) {
@@ -22,20 +29,38 @@ Page({
     this.setData({
       open: !this.data.open
     })
-
   },
 
   closeImg: function(e) {
-    var i = e.currentTarget.id;
-    console.log(e.currentTarget.id)
+    var that = this;
+    var images = that.data.src;
+    var index = e.currentTarget.id;//获取当前长按图片下标
+    console.log(index)
+    console.log(images)
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          images.splice(index, 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        that.setData({
+          src: images
+        });
+      }
+    })
   },
 
   upLoadImg: function(e) {
     var that = this
     wx.chooseImage({
-      count: 5, // 最多可以选择的图片张数，默认9
-      sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+      count: 5, 
+      sizeType: ['original', 'compressed'], 
+      sourceType: ['album', 'camera'], 
       success: function (res) {
         // success
         console.log(res)
@@ -105,7 +130,6 @@ Page({
   },
 
   go: function () {
-    
     this.setData({
       showModal: true
     })
@@ -143,6 +167,14 @@ Page({
   onLoad: function(options) {
     this.getProgram()
     var that = this;
+    wx.getStorage({
+      key: 'repairDetail',
+      success: function(res) {
+        that.setData({
+          repair: res.data
+        })       
+      },
+    })
     /**
      * 获取系统信息
      */

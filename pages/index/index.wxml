@@ -24,7 +24,7 @@
       <image src='/i/icon/Computer@2x.png' style='margin-top: 3%; width: 120rpx;'></image>
     </view>
     <view class='wxNeed'>
-      <image src='/i/icon/more@2x.png' style='margin-top: 3%; width: 136rpx;'></image>
+      <image src='/i/icon/more@2x.png' style='margin-top: 3%; width: 140rpx;'></image>
     </view>
   </view>
 </view>

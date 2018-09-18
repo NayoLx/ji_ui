@@ -1,1 +1,75 @@
 /* pages/my/index.wxss */
+
+.head{
+  width: 100%;
+  height: 480rpx;
+}
+.head .bgimage{
+  width: 100%;
+  height: 240rpx;
+}
+.head .headimg{
+  width: 190rpx;
+  height: 190rpx;
+  position: absolute;
+  top: 8%;
+  left: 38%;
+}
+.head text{
+  width: 100%;
+  margin: 4% 0 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.head button{
+  width: 30%;
+  height: 80rpx;
+  font-size: 35rpx;
+  background-color: white;
+  border-radius: 50rpx;
+  line-height: 80rpx;
+  border: 2rpx solid #BFBFBF;
+}
+button::after{
+  border:none;
+}
+.conlist{
+  width: 100%;
+  height: 100%;
+
+}
+.list{
+  width: 100%;
+  margin-top: 20rpx;
+  padding-left: 10%;
+}
+.list image{
+  width: 45rpx;
+  height: 53rpx;
+  padding-top: 10rpx;
+  margin-top: 10rpx;
+  margin-bottom: -1%;
+}
+
+.img{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 58%;
+  margin-top: 20rpx;
+  border-radius: .8em;
+  background: #FF4444;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 20rpx;
+}
+
+.list text{
+  width: 50%;
+  height: 56rpx;
+  font-size: 40rpx;
+  margin-left: 20rpx;
+  font-weight:400;
+}

@@ -21,14 +21,26 @@
   margin-top: 9rpx;
 }
 
-text {
+.equip text {
+  width: 30%;
   font-size: 35rpx;
   font-weight: 600;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap; 
 }
 
 .equip .name {
   float: right;
-  margin-left: 40%;
+  width: 48%;
+  margin-left: 13%;
+  font-weight: 500;
+  margin-right: 13rpx;
+}
+.equip .name1 {
+  float: right;
+  width: 40%;
+  margin-left: 20%;
   font-weight: 500;
   margin-right: 13rpx;
 }
@@ -43,6 +55,8 @@ text {
   width: 100%;
   float: left;
   margin-bottom: 10rpx;
+   font-size: 35rpx;
+  font-weight: 600;
 }
 
 .program image {
@@ -91,6 +105,7 @@ text {
 .another text {
   font-weight: 500;
   font-size: 30rpx;
+  
   margin-top: 8rpx;
 }
 
@@ -109,6 +124,8 @@ text {
 .uploadImage text {
   width: 100%;
   float: left;
+   font-size: 35rpx;
+  font-weight: 600;
 }
 
 .uploadImage .tet {
@@ -136,6 +153,8 @@ text {
   top:15rpx;
 }
 .add {
+   font-size: 35rpx;
+  font-weight: 600;
   width: 100%;
   padding: 20rpx;
   display: flex;

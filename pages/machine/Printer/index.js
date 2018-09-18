@@ -5,20 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cateItems: [
-     
-    ],
+    cateItems: [],
     curNav: 1,
     curIndex: 0,
     winWidth: 0,
-    winHeight: 0
+    winHeight: 0,
+    detailTitle:'',
+    detailName:'',
   },
 
   //事件处理函数  
-  switchRightTab: function(e) {
+  switchRightTab: function(e) {  
     // 获取item项的id，和数组的下标值  
-    let id = e.target.dataset.id,
-      index = parseInt(e.target.dataset.index);
+    let id = e.target.dataset.id
+    var index = parseInt(e.target.dataset.index)
     // 把点击到的某一项，设为当前index  
     if (id) {
       this.setData({
@@ -26,6 +26,9 @@ Page({
         curIndex: index
       })
     }
+    this.setData({
+      detailTitle: this.data.cateItems[this.data.curIndex].Printername
+    })
   },
 
   /**
@@ -199,6 +202,21 @@ Page({
     ]
     self.setData({
       cateItems: data
+    })
+  },
+   
+  onJump: function(e) {
+    this.getListId(e)
+    wx:wx.setStorageSync('repairDetail', ([this.data.detailTitle, this.data.detailName]))
+    wx.navigateTo({
+      url: '../repairtpl/index',
+    })
+  },
+
+  getListId: function (e) {
+    var a = e.currentTarget.id
+    this.setData({
+      detailName: this.data.cateItems[this.data.curIndex].children[a].name
     })
   },
 

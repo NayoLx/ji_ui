@@ -1,2 +1,48 @@
 <!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class='head'>
+  <image src='../../i/my/my_bg@2x.png' class='bgimage'></image>
+  <view>
+    <image src='../../i/my/head@2x.png' class='headimg'></image>
+    <text>用户名</text>
+    <button>更改资料</button>
+  </view>
+</view>
+
+<view class='conlist'>
+  <view class='list' bindtap='onVoucher'>
+    <image src='../../i/my/youhuiquan@2x.png' ></image>
+    <text>我的优惠券</text>   
+    <view class='img'>1</view>
+  </view>
+
+  <view class='list'>
+    <image src='../../i/my/hongbao@2x.png'></image>
+    <text>我的红包</text>
+    <view class='img' >2</view>
+  </view>
+
+  <view class='list'>
+    <image src='../../i/my/shebei@2x.png'></image>
+    <text>我的设备</text>
+    <view class='img' style='display:none'></view>
+  </view>
+
+  <view class='list'>
+    <image src='../../i/my/fapiao@2x.png'></image>
+    <text>电子发票</text>
+    <view class='img' style='display:none'></view>
+  </view>
+
+  <view class='list'>
+    <image src='../../i/my/weixin@2x.png'></image>
+    <text>微信授权</text>
+    <view class='img' style='display:none'></view>
+  </view>
+
+  <view class='list'>
+    <image src='../../i/my/kefu@2x.png'></image>
+    <text>联系客服</text>
+    <view class='img' style='display:none'></view>
+  </view>
+
+</view>

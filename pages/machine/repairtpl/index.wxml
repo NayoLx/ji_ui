@@ -4,10 +4,13 @@
 <scroll-view scroll-y='true' style='height:{{winHeight-100}}px'>
   <view class='contain'>
     <view class='equip'>
+    <!-- 保修设备 -->
       <text>报修设备</text>
-      <text class='name' value='{{repair}}'>{{repair}} 惠普-喷墨打印机</text>
-      <image src='../../../i/repair/back@2x.png'></image>
+      <text wx:if="{{repair[0].length>5}}" class='name' value='{{repair[1]}}-{{repair[0]}}' bindtap='back'>{{repair[1]}}-{{repair[0]}}</text>
+      <text wx:else class='name1' value='{{repair[1]}}-{{repair[0]}}' bindtap='back'>{{repair[1]}}-{{repair[0]}}</text>
+      <image src='../../../i/repair/back@2x.png' bindtap='back'></image>
     </view>
+    <!-- 故障问题 -->
     <view class='program'>
       <text>故障问题</text>
       <block wx:for="{{items}}">
@@ -24,17 +27,19 @@
       </view>
 
     </view>
+    <!-- 其他问题 -->
     <view class='another'>
       <text>其他问题</text>
       <input placeholder='请描述其他问题，限20字' placeholder-style='font-size:30rpx'></input>
     </view>
+    <!-- 上传图片 -->
     <view class='uploadImage'>
       <text>上传图片<text class='tet'>(限5张)</text></text>
       <block wx:if='{{src}}'>
         <block wx:for='{{src}}' wx:for-index="idx">
           <view>
-            <image src='{{item}}' class="imag"></image>
-            <image src='../../../i/repair/close@2x.png' class='close' bindtap='closeImg' id="{{idx}}"></image>
+            <image src='{{item}}' class="imag" mode="aspectFill"></image>
+            <image src='../../../i/repair/close@2x.png' class='close' bindtap='closeImg' id="{{idx}}" data-index="{{index}}"></image>
           </view>
         </block>
       </block>
@@ -43,14 +48,14 @@
       <image wx:else src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg' style='display:none' class="imag"></image>
     </view>
   </view>
-
+  <!-- 上门地址 -->
   <view class='contain'>
     <view class='add'>
       <text>上门地址</text>
     </view>
     <view class='address'>
       <image src="../../../i/repair/loact@2x.png"></image>
-      <input placeholder='暂无地址' id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true'></input>
+      <input placeholder='暂无地址' id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true' value='{{add}}'></input>
       <view>
         <button bindtap='toChooseAdd'>选择地址</button>
       </view>

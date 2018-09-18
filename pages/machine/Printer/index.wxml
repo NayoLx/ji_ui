@@ -4,8 +4,8 @@
 <view class="container">
   <!--左侧栏-->
   <scroll-view scroll-y="true" style='height: {{winHeight}}px' class='scrollview'><!--设置可滚动-->
-      <block wx:for="{{cateItems}}">
-        <view class="nav_left_items {{curNav == item.Printerid ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.Printerid}}">
+      <block wx:for="{{cateItems}}" wx:key="key">
+        <view class="nav_left_items {{curNav == item.Printerid ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.Printerid}}" id="{{item.Printerid}}"> 
           {{item.Printername}}
         </view>
       </block>
@@ -13,9 +13,9 @@
   <!--右侧栏-->
   <scroll-view scroll-y="true" style='height: {{winHeight}}px' class='scrollview2'><!--设置可滚动-->
     <view wx:if="{{cateItems[curIndex].ishaveChild}}">
-      <block wx:for="{{cateItems[curIndex].children}}">
+      <block wx:for="{{cateItems[curIndex].children}}" wx:for-index='id' wx:key="key">
         <view class="nav_right_items">
-          <image src="{{item.image}}"></image>
+          <image src="{{item.image}}" bindtap='onJump' id="{{id}}" ></image>
           <text>{{item.name}}</text>
         </view>
       </block>

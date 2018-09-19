@@ -66,7 +66,9 @@ Page({
     console.log(this.data.winHeight)
   },
 
-
+  /**
+   * 券的数据
+   */
   getVoucher: function() {
     var data = [{
       "id": 0,
@@ -158,7 +160,9 @@ Page({
       voucher: data
     })
   },
-
+  /**
+   * 获取点击到券的数据
+   */
   getVoucherId: function(e) {
     var a = e.currentTarget.id
     console.log(a)

@@ -1,0 +1,44 @@
+<!--pages/order/detail/index.wxml-->
+<!-- step 步骤条 -->
+<view class='step'>
+  
+</view>
+
+<!-- 接单工程师 -->
+<view class='eng'>
+  <image src='../../../i/order/head@2x.png' class='head'></image>
+  <text>黄工<text>已服务1单</text></text>
+  <view>
+  <image src='../../../i/order/more@2x.png' class='image2'></image>
+    <image src='../../../i/order/phone@2x.png' class='image1'></image>
+    
+  </view>
+</view>
+<!-- 内容 -->
+<view class='contain'>
+  <text>维修设备：通用-台式电脑\n</text>
+  <text>故障原因：无法上网\n</text>
+  <block>
+    <image src='../../../i/order/pic@2x.png'></image>
+    <image src='../../../i/order/pic@2x.png'></image>
+  </block>
+</view>
+
+<!-- 地址 -->
+<view class='add'>
+  <text>地址：广东省深圳市南山区桃园路8号 \n</text>
+  <text>电话：020-55555555  张女士\n</text>
+  <text class='te'>订单号：565656562233333\n</text>
+  <text class='te'>下单时间：2018-12-10 12:20\n</text>
+</view>
+
+<!-- 费用详情 -->
+<view class='detail'>
+  
+</view>
+
+<view class='viewbtn'>
+<view class='btn'>
+  <button>找人代付</button>
+  <button>付款</button>
+</view></view>

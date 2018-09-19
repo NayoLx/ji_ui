@@ -14,7 +14,9 @@ Page({
     detailName:'',
   },
 
-  //事件处理函数  
+  /** 
+   * 事件处理函数
+   */  
   switchRightTab: function(e) {  
     // 获取item项的id，和数组的下标值  
     let id = e.target.dataset.id
@@ -204,7 +206,10 @@ Page({
       cateItems: data
     })
   },
-   
+  
+  /**
+   * 带着设备数据跳转到填写报修单页面
+   */
   onJump: function(e) {
     this.getListId(e)
     wx:wx.setStorageSync('repairDetail', ([this.data.detailTitle, this.data.detailName]))
@@ -212,7 +217,9 @@ Page({
       url: '../repairtpl/index',
     })
   },
-
+  /**
+   * 获取list的ID
+   */
   getListId: function (e) {
     var a = e.currentTarget.id
     this.setData({

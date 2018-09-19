@@ -1,9 +1,9 @@
 <!--pages/address/index.wxml-->
 
 <scroll-view scroll-y="true" style='height: {{winHeight - 100}}px;'>
-  <block wx:for="{{allAdd.address}}">
+  <block wx:for="{{allAdd.address}}" wx:for-index = "id">
     <view class='addlist'>
-      <button>
+      <button bindtap='chooseAdd' id = "{{id}}">
         <text>{{item.detail_address}}</text>
         <text>{{item.phone}}\t{{item.name}}</text>
       </button>

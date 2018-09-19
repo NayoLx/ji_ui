@@ -10,6 +10,7 @@
     "pages/order/map/index",
     "pages/order/quality/index",
     "pages/order/evaluate/index",
+    "pages/order/detail/index",
     "pages/my/index",
     "pages/my/Voucher/index",
     "pages/my/myequip/index",

@@ -13,15 +13,35 @@ Page({
     aa:'',
     allAdd: {}
   },
-
+  
+  /**
+   *  跳转新增地址页面
+   */
   toNewadd: function(e) {
     wx.navigateTo({
       url: 'new/new',
     })
   },
+  
+  /**
+   * 缓存已选择的地址，并返回上一个页面
+   */
+  chooseAdd: function(e) {
+    var i = e.currentTarget.id
+    console.log(this.data.allAdd.address[i])
+    wx.setStorage({
+      key: 'chooseAdd',
+      data: {
+        title: this.data.allAdd.address[i].detail_address,
+        name: this.data.allAdd.address[i].name,
+        phone: this.data.allAdd.address[i].phone
+      },
+    })
+    wx.navigateBack({})
+  },
 
   /**
-   * 编辑
+   * 缓存已选择的地址数据，并跳转编辑页面
    */
   onEdit: function(options) {
     let addid = options.currentTarget.dataset.id
@@ -51,8 +71,9 @@ Page({
       }
     }
   },
+
   /**
-   * 删除
+   * 判断是否删除
    */
   onDelete: function (options){
     wx.showModal({

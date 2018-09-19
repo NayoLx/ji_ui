@@ -16,11 +16,15 @@ Page({
     address: []
   },
 
+  /**
+   * 跳转选择地址页面
+   */
   locat: function (e) {
     wx.navigateTo({
       url: '../choose/choose',
     })
   },
+
   /**
    * 获取inputd的值
    */
@@ -39,7 +43,6 @@ Page({
       name: e.detail.value
     })
   },
-
 
   /**
    * 生命周期函数--监听页面加载
@@ -77,7 +80,10 @@ Page({
 
     }
   },
-
+  
+  /**
+   *  button点击判断事件，判断成功缓存数据并返回
+   */
   saveAdd: function (e) {
     var a = wx.getStorageSync("address")
     if (a == '') {

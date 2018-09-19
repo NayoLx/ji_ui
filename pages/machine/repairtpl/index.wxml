@@ -10,6 +10,7 @@
       <text wx:else class='name1' value='{{repair[1]}}-{{repair[0]}}' bindtap='back'>{{repair[1]}}-{{repair[0]}}</text>
       <image src='../../../i/repair/back@2x.png' bindtap='back'></image>
     </view>
+
     <!-- 故障问题 -->
     <view class='program'>
       <text>故障问题</text>
@@ -27,11 +28,13 @@
       </view>
 
     </view>
+
     <!-- 其他问题 -->
     <view class='another'>
       <text>其他问题</text>
-      <input placeholder='请描述其他问题，限20字' placeholder-style='font-size:30rpx'></input>
+      <input placeholder='请描述其他问题，限20字' placeholder-style='font-size:30rpx' bindinput='onProgramInput'></input>
     </view>
+
     <!-- 上传图片 -->
     <view class='uploadImage'>
       <text>上传图片<text class='tet'>(限5张)</text></text>
@@ -43,11 +46,11 @@
           </view>
         </block>
       </block>
-
       <image wx:if='{{src == null || src.length<5}}' src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg' class="imag"></image>
       <image wx:else src="../../../i/repair/addpic@2x.png" bindtap='upLoadImg' style='display:none' class="imag"></image>
     </view>
   </view>
+
   <!-- 上门地址 -->
   <view class='contain'>
     <view class='add'>
@@ -55,15 +58,23 @@
     </view>
     <view class='address'>
       <image src="../../../i/repair/loact@2x.png"></image>
-      <input placeholder='暂无地址' id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true' value='{{add}}'></input>
+      <textarea wx:if="{{address != ''}}" id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true'>
+        <text>{{address.title}}\n</text>
+        <text>{{address.name}}\t\t {{address.phone}}</text>
+      </textarea>
+      <textarea wx:else placeholder='暂无地址' id='keyword' bindinput='keywordInput' placeholder-class='pstyle' disabled='true'></textarea>
       <view>
         <button bindtap='toChooseAdd'>选择地址</button>
       </view>
     </view>
   </view>
 </scroll-view>
-<view class='btn'>
-  <button bindtap='go'>提交</button>
+
+<view wx:if="{{repair != null && address != '' && src != '' && (items != '' || pro != '')}}" class='btn'>
+  <button bindtap='go' class='button2'>提交</button>
+</view>
+<view wx:else class='btn'>
+  <button bindtap='noGo'>提交</button>
 </view>
 
 
@@ -73,11 +84,12 @@
     <view class='useralert_quanyi'>确认报修</view>
     <view class="data">
       <text>报修设备:</text>
-      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
-      <text>上门地址:</text>
-      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
+      <input disabled='true' placeholder='{{repair[1]}}-{{repair[0]}}' placeholder-style='font-size:30rpx;color:#000'></input>
       <text>联系电话:</text>
-      <input disabled='true' placeholder='' placeholder-style='font-size:30rpx;color:#000'></input>
+      <input disabled='true' placeholder='{{address.name}} {{address.phone}}' placeholder-style='font-size:30rpx;color:#000'></input>
+      <text>上门地址:</text>
+      <textarea disabled='true' placeholder='{{address.title}}' placeholder-style='font-size:30rpx;color:#000'></textarea>
+      
     </view>
     <view class="tip">
       <text>下单提示:\n</text>

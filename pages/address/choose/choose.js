@@ -23,6 +23,9 @@ Page({
     location: []
   },
 
+  /**
+   * 输入框搜索
+   */
   keywordInput:function(e){
     this.setData({
       keyword: e.detail.value
@@ -83,7 +86,10 @@ Page({
 
     })
   },
-
+  
+  /**
+   * 缓存地址
+   */
   setAddData:function(e){
     var id = e.currentTarget.id;
     this.setData({

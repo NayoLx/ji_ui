@@ -13,6 +13,10 @@ Page({
     markers: [
     ],
   },
+
+  /**
+   * 地图的点击事件
+   */
   markertap(e) {
     console.log(e.markerId)
   },
@@ -102,7 +106,7 @@ Page({
           that.setData({
             systemInfo: res,
             winWidth: res.windowWidth,
-            winHeight: res.windowHeight
+            winHeight: res.windowHeight 
           })
           if (res.platform == "devtools") {
             console.log('PC')

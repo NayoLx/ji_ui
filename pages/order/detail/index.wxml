@@ -1,7 +1,20 @@
 <!--pages/order/detail/index.wxml-->
+
 <!-- step 步骤条 -->
 <view class='step'>
-  
+  <view class="step_box">
+    <scroll-view class="step_x" scroll-x style="width: auto; overflow:hidden;">
+      <view class="step_list" wx:for="{{processData}}">
+        <view class='step_process'>
+          <view wx:if="{{item.id != 0}}" class='step_line' style='background: {{item.linecolor}}'></view>
+          <view wx:else class='step_line' style='background-color:white'></view>
+          <image src="{{item.icon}}" class='step_icon' mode="aspectFill"></image>
+          <view class='step_line' style='background: {{item.linecolor}}'></view>
+        </view>
+        <view class="step_name">{{item.name}}</view>
+      </view>
+    </scroll-view>
+  </view>
 </view>
 
 <!-- 接单工程师 -->
@@ -9,11 +22,11 @@
   <image src='../../../i/order/head@2x.png' class='head'></image>
   <text>黄工<text>已服务1单</text></text>
   <view>
-  <image src='../../../i/order/more@2x.png' class='image2'></image>
+    <image src='../../../i/order/more@2x.png' class='image2'></image>
     <image src='../../../i/order/phone@2x.png' class='image1'></image>
-    
   </view>
 </view>
+
 <!-- 内容 -->
 <view class='contain'>
   <text>维修设备：通用-台式电脑\n</text>
@@ -34,11 +47,95 @@
 
 <!-- 费用详情 -->
 <view class='detail'>
-  
+  <view style='border-bottom: 2rpx solid #D8D9DA;padding-bottom:20rpx;'>
+    <text class='tex'>费用明细\n</text>
+    <text class='tex2'>检查客户端的协议配置，账号师傅填写正确\n 故障原因：客户端配置问题 \n 数量：x1\n 价格：20元</text>
+  </view>
+  <view class='price'>
+    <text>维修费（元）</text>
+    <view>
+      +20.00
+    </view>
+  </view>
+  <view class='price'>
+    <text>上门费（元）</text>
+    <view>
+      +20.00
+    </view>
+  </view>
+  <view class='price'>
+    <text>优惠券</text>
+    <view style='color: #02A9F9;'>
+      省xx元；新人红包
+      <image src='../../../i/order/more@2x.png'></image>
+    </view>
+  </view>
+  <view class='price'>
+    <text style='font-weight:700'>应付总额（元）</text>
+    <view style='font-weight:700; color:red; font-size:38rpx;'>
+      20.00
+    </view>
+  </view>
+  <view>
+  </view>
 </view>
 
-<view class='viewbtn'>
-<view class='btn'>
-  <button>找人代付</button>
-  <button>付款</button>
-</view></view>
+
+<block wx:for="{{orderDetail}}">
+  <block wx:if="{{item.state.waitReceipt == true || item.state.waitEngineer == true}}">
+    <view class='viewbtn'>
+      <view class='btn'>
+        <button class='firstbtn'>取消订单</button>
+        <button>查看地图</button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state.bePrice == true}}">
+    <view class='viewbtn'>
+      <view class='btn'>
+        <button class='firstbtn'>取消订单</button>
+        <button>查看报价</button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state.truePrice == true}}">
+    <view class='viewbtn'>
+      <view class='btn2'>
+        <button class='firstbtn'>取消订单</button>
+        <button class='firstbtn'>拒绝报价</button>
+        <button>同意报价</button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state.waitReceive == true}}">
+    <view class='viewbtn'>
+      <view class='btn2'>
+        <button class='firstbtn'>取消订单</button>
+        <button>验收通过</button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state.waitPay == true}}">
+    <view class='viewbtn'>
+      <view class='btn2'>
+        <button>找人代付</button>
+        <button>付款</button>
+      </view>
+    </view>
+  </block>
+  <block wx:elif="{{item.state.evaluate == true}}">
+    <view class='viewbtn'>
+      <view class='btn2'>
+        <button>申请质保</button>
+        <button>评价</button>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='viewbtn'>
+      <view class='btn2'>
+        <button>查看质保</button>
+      </view>
+    </view>
+  </block>
+</block>

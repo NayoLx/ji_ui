@@ -4,7 +4,7 @@
 <scroll-view scroll-y='true' style='height:{{winHeight-100}}px'>
   <view class='contain'>
     <view class='equip'>
-    <!-- 保修设备 -->
+      <!-- 保修设备 -->
       <text>报修设备</text>
       <text wx:if="{{repair[0].length>5}}" class='name' value='{{repair[1]}}-{{repair[0]}}' bindtap='back'>{{repair[1]}}-{{repair[0]}}</text>
       <text wx:else class='name1' value='{{repair[1]}}-{{repair[0]}}' bindtap='back'>{{repair[1]}}-{{repair[0]}}</text>
@@ -89,7 +89,7 @@
       <input disabled='true' placeholder='{{address.name}} {{address.phone}}' placeholder-style='font-size:30rpx;color:#000'></input>
       <text>上门地址:</text>
       <textarea disabled='true' placeholder='{{address.title}}' placeholder-style='font-size:30rpx;color:#000'></textarea>
-      
+
     </view>
     <view class="tip">
       <text>下单提示:\n</text>

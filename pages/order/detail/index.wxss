@@ -1,36 +1,102 @@
 /* pages/order/detail/index.wxss */
 
+/*步骤条*/
 
-.contain{
+.step {
+  width: 88%;
+  margin: 40rpx;
+  height: 120rpx;
+  box-shadow: 0rpx 14rpx 42rpx 0rpx rgba(165, 165, 165, 0.39);
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10rpx 10rpx 20rpx 10rpx;
+  background-color: #fff;
+}
+
+.step_x {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+}
+
+.step_box {
+  width: 100%;
+  height: 100rpx;
+  overflow: hidden;
+  padding: 10rpx;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.step_list {
+  width: 160rpx;
+  height: auto;
+  display: inline-block;
+}
+
+.step_process {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.step_icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.step_line {
+  height: 6rpx;
+  flex: 1;
+}
+
+.step_name {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+}
+
+/* 内容 */
+.contain {
   width: 100%;
   padding: 20rpx;
-  padding-left: 35rpx; 
-  border-bottom: 2rpx solid #D8D9DA;
+  padding-left: 35rpx;
+  border-bottom: 2rpx solid #d8d9da;
 }
 
-.contain text{
+.contain text {
   margin: 5rpx;
-  font-size: 36rpx;
+  font-size: 35rpx;
+  line-height: 60rpx;
+  height: 80px;
 }
-.contain image{
-   margin: 25rpx 25rpx 25rpx 0;
+
+.contain text text {
+  margin: 5rpx;
+  font-size: 35rpx;
+}
+
+.contain image {
+  margin: 25rpx 25rpx 25rpx 0;
   width: 120rpx;
   height: 120rpx;
 }
 
-.add{
+.add {
   width: 100%;
   padding: 20rpx;
-  padding-left: 35rpx; 
-  border-bottom: 20rpx solid #F2F3F3;
+  padding-left: 35rpx;
+  border-bottom: 20rpx solid #f2f3f3;
 }
 
-.add text{
+.add text {
+  height: 80rpx;
+  line-height: 58rpx;
   margin: 3rpx;
-  font-size: 36rpx;
+  font-size: 35rpx;
 }
 
-.add .te{
+.add .te {
   color: #797979;
   margin: 5rpx;
   font-size: 31rpx;
@@ -45,7 +111,6 @@
   position: fixed;
   bottom: 0;
   right: 0;
-
 }
 
 .btn button {
@@ -63,22 +128,21 @@ button::after {
   border: none;
 }
 
-.eng{
+.eng {
   width: 100%;
   height: 120rpx;
-  border-bottom: 2rpx solid #D8D9DA;
+  border-bottom: 2rpx solid #d8d9da;
 }
 
-.eng .head{
+.eng .head {
   width: 100rpx;
   height: 100rpx;
   margin-left: 35rpx;
   float: left;
-  margin-right: 35rpx;   
-
+  margin-right: 35rpx;
 }
 
-.eng text{
+.eng text {
   /* float: left; */
   font-size: 38rpx;
   height: 88rpx;
@@ -87,25 +151,28 @@ button::after {
   flex-direction: row;
   justify-content: left;
   margin-left: 10rpx;
-  font-weight:500;
+  font-weight: 500;
 }
-.eng text text{
+
+.eng text text {
   font-size: 28rpx;
   height: 100rpx;
   /* float: right; */
   float: right;
   color: #797979;
-
 }
-.eng view{
+
+.eng view {
   margin-top: -68rpx;
 }
-.eng view .image1{
+
+.eng view .image1 {
   width: 60rpx;
   height: 60rpx;
   float: right;
 }
-.eng view .image2{
+
+.eng view .image2 {
   width: 25rpx;
   height: 35rpx;
   float: right;
@@ -114,20 +181,90 @@ button::after {
   margin-right: 20rpx;
 }
 
-.step{
-  width: 90%;
-  margin: 40rpx;
-  height: 160rpx;
-   border: 2rpx solid #D8D9DA;
+.detail {
+  width: 100%;
+  height: auto;
+  padding: 25rpx;
+  margin-bottom: 300rpx;
 }
-.detail{
-  height: 200rpx;
+
+.detail .tex {
+  height: 80rpx;
+  line-height: 70rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+  margin-bottom: 30rpx;
 }
-.viewbtn{
+
+.detail .tex2 {
+  font-size: 33rpx;
+  height: 80rpx;
+  line-height: 55rpx;
+}
+
+.viewbtn {
   width: 100%;
   height: 112rpx;
-   position: fixed;
+  position: fixed;
   bottom: 0;
   right: 0;
-  border-top: 1rpx solid #D8D9DA;
+  border-top: 1rpx solid #d8d9da;
+  background-color: white;
+}
+
+.price {
+  width: 100%;
+  padding: 0rpx;
+  height: 70rpx;
+  margin-top: 20rpx;
+  border-bottom: 2rpx solid #d8d9da;
+}
+
+.price text {
+  float: left;
+  font-size: 35rpx;
+  line-height: 55rpx;
+}
+
+.price view {
+  float: right;
+  font-size: 35rpx;
+  margin-right: 55rpx;
+}
+
+.price view image {
+  float: right;
+  width: 18rpx;
+  height: 30rpx;
+  margin: 8rpx 0 0 10rpx;
+}
+
+.btn2 {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx 0;
+  margin-left: 45%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.btn2 button {
+  float: right;
+  width: 180rpx;
+  height: 70rpx;
+  border-radius: 33px;
+  font-size: 30rpx;
+  line-height: 70rpx;
+  background-color: white;
+  border: 1px solid rgba(181, 181, 181, 1);
+}
+
+button::after {
+  border: none;
+}
+
+.firstbtn {
+  color: #706f6f;
 }

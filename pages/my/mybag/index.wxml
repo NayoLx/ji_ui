@@ -1,0 +1,63 @@
+<!--pages/my/mybag/index.wxml-->
+<view wx:if="{{!swiper}}">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待领取</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已领取</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已过期</view>
+  </view>
+
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style='height:{{winHeight - 40}}px' bindchange="bindChange">
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view style='border-bottom: 1rpx solid #E2E2E2; height:450rpx;'>
+          <view class='bag'>
+            <image src='../../../i/mybag/style01@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+          <view class='bag'>
+            <image src='../../../i/mybag/style01@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+          <view class='bag'>
+            <image src='../../../i/mybag/style01@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view class="addbag">
+          <text class='tt'>新人首单红包\n<text>2018.10.01  12:00</text></text>
+          <text class='tt2'>+50.00\n<text>已存入微信零钱</text></text>
+        </view>
+        <view class="addbag">
+          <text class='tt'>新人首单红包\n<text>2018.10.01  12:00</text></text>
+          <text class='tt2'>+50.00\n<text>已存入微信零钱</text></text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scroll-views'>
+        <view style='border-bottom: 1rpx solid #E2E2E2; height:450rpx;'>
+          <view class='bag'>
+            <image src='../../../i/mybag/style03@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+          <view class='bag'>
+            <image src='../../../i/mybag/style03@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+          <view class='bag'>
+            <image src='../../../i/mybag/style03@2x.png'></image>
+            <text class='te'>\n新人首单红包\n<text>截止:2018.10.01</text></text>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+
+  </swiper>
+</view>

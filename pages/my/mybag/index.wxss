@@ -1,0 +1,87 @@
+/* pages/my/mybag/index.wxss */
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 36px;
+
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33%;
+  color: #7a7a7a;
+}
+
+.on {
+  color: #000004;
+  border-bottom: 8rpx solid #fde800;
+}
+swiper-items{
+  height: 100%;
+  
+}
+.scroll-views{
+  height: 100%;
+  
+}
+.swiper-box {
+  display: block;
+  min-height: 100%;
+  height: 2000rpx;
+  width: 100%;
+  background-color: white;
+}
+
+.bag{
+  width: 30%;
+  height: 450rpx;
+   padding: 12rpx;
+   float: left;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bag image{
+  width: 100%;
+  height: 280rpx;
+  padding: 20rpx;
+}
+.bag .te{
+  font-size: 34rpx;
+  margin-top:-50rpx; 
+}
+.bag text text{
+  font-size: 24rpx;
+ 
+}
+.addbag{
+  width: 100%;
+  height: 130rpx;
+  border-bottom: 1rpx solid #E2E2E2;
+}
+.addbag .tt{
+  float: left;
+  width: 65%;
+  font-size: 34rpx;
+  line-height: 50rpx;
+  padding: 10rpx;
+  margin-left: 25rpx;
+}
+.addbag .tt text{
+  font-size: 27rpx;
+  color: #868686;
+}
+
+.addbag .tt2{
+  float: right;
+  width: 26%;
+   font-size: 34rpx;
+   line-height: 50rpx;
+    padding: 10rpx;
+}
+.addbag .tt2 text{
+  font-size: 27rpx;
+  color: #868686;
+}

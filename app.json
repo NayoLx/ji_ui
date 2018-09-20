@@ -14,6 +14,7 @@
     "pages/my/index",
     "pages/my/Voucher/index",
     "pages/my/myequip/index",
+    "pages/my/mybag/index",
     "pages/machine/repairtpl/index",
     "pages/logs/logs",
     "pages/machine/Copier/index",

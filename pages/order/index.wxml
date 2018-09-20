@@ -11,7 +11,7 @@
 
     <swiper-item>
       <scroll-view scroll-y="true" class='scroll-views'>
-        <block wx:for="{{myOrder}}">
+        <block wx:for="{{myOrder}}" wx:for-index="idx">
           <block wx:if="{{item.state.waitReceipt == true}}">
             <!-- 等待接单 -->
             <view class='contain'>
@@ -26,7 +26,7 @@
               <view>
                 <!-- <text class='te'>实付金额:{{pay}}</text> -->
                 <view class='btn'>
-                  <button class='firstbtn'>
+                  <button class='firstbtn' id="{{idx}}" bindtap='refuseOrder'>
                     取消订单
                   </button>
                   <button>
@@ -51,7 +51,7 @@
               <view>
                 <!-- <text class='te'>实付金额:{{pay}}</text> -->
                 <view class='btn'>
-                  <button class='firstbtn'>
+                  <button class='firstbtn' id="{{idx}}" bindtap='refuseOrder'>
                     取消订单
                   </button>
                   <button>
@@ -74,12 +74,12 @@
                 </view>
               </view>
               <view>
-                <text class='te'>实付金额:\t{{item.price}}元</text>
+                <text class='te'>实付金额: {{item.price}}元</text>
                 <view class='btn'>
-                  <button class='firstbtn'>
+                  <button class='firstbtn' id="{{idx}}" bindtap='refuseOrder'>
                     取消订单
                   </button>
-                  <button>
+                  <button bindtap='go'>
                     查看报价
                   </button>
                 </view>
@@ -99,9 +99,9 @@
                 </view>
               </view>
               <view>
-                <text class='te'>实付金额:\t{{item.price}}</text>
+                <text class='te'>实付金额: {{item.price}}元</text>
                 <view class='btn'>
-                  <button class='firstbtn'>
+                  <button class='firstbtn' id="{{idx}}" bindtap='refuseOrder'>
                     取消订单
                   </button>
                   <button>
@@ -124,9 +124,9 @@
                 </view>
               </view>
               <view>
-                <text class='te'>实付金额:\t{{item.price}}</text>
+                <text class='te'>实付金额: {{item.price}}元</text>
                 <view class='btn'>
-                  <button>
+                  <button id="{{idx}}" bindtap='refuseOrder'>
                     找人代付
                   </button>
                   <button>
@@ -144,7 +144,7 @@
     <swiper-item>
       <scroll-view scroll-y="true" class='scroll-views'>
         <block wx:for="{{myOrder}}">
-          <block wx:if="{{item.state.finish == true}}">
+          <block wx:if="{{item.state.evaluate == true}}">
             <view class='contain'>
               <view class='head'>
                 <image src='{{item.images}}'></image>
@@ -155,13 +155,37 @@
                 </view>
               </view>
               <view>
-                <text  class='te'>实付金额: {{item.price}}</text>
+                <text class='te'>实付金额: {{item.price}}元</text>
                 <view class='btn'>
                   <button bindtap='onQuality'>
                     申请质保
                   </button>
                   <button bindtap='onEvaluate'>
                     评价
+                  </button>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <block wx:if="{{item.state.finish == true}}">
+            <view class='contain'>
+              <view class='head'>
+                <image src='{{item.images}}'></image>
+                <text>{{item.name}}<text>{{item.time}}</text></text>
+                <view>
+                  <image src='../../i/order/icon@2x.png' class='image1' style='visibility: hidden;'></image>
+                  <text class='text1' style='color: red'>已完成</text>
+                </view>
+              </view>
+              <view>
+                <text class='te'>实付金额: {{item.price}}元</text>
+                <view class='btn'>
+                  <button bindtap='onQuality' style='visibility: hidden;'>
+                    申请质保
+                  </button>
+                  <button bindtap='onEvaluate'>
+                    查看质保
                   </button>
                 </view>
               </view>
@@ -182,11 +206,11 @@
                 <text>{{item.name}}<text>{{item.time}}</text></text>
                 <view>
                   <image src='../../i/order/icon@2x.png' class='image1'> </image>
-                  <text class='text1'>取消</text>
+                  <text class='text1'>系统取消</text>
                 </view>
               </view>
               <view>
-                <text wx:if="{{item.price != ''}}" class='te'>实付金额: {{item.price}}</text>
+                <text wx:if="{{item.price != ''}}" class='te'>实付金额: {{item.price}}元</text>
                 <view class='btn'>
                   <button class='firstbtn'>
                     删除订单
@@ -203,4 +227,50 @@
     </swiper-item>
 
   </swiper>
+</view>
+
+<!-- 报价弹窗 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap='close'></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='headimg'>
+    <image src='../../i/order/pic01@2x.png'></image>
+    <text>是否同意报价?</text>
+  </view>
+  <view class='headtext'>
+    <text>工程师报价：<text>100元</text></text>
+    <text>设备型号：惠普激光打印机</text>
+  </view>
+
+  <view class="btn_ok">
+    <button class='btn_no' bindtap='refuse'>取消</button>
+    <button class='btn_yes'>确定</button>
+  </view>
+</view>
+
+<!-- 拒绝弹窗 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal2}}" bindtap='close'></view>
+<view class="modalDlg2" wx:if="{{showModal2}}">
+  <view class='headimg'>
+    <image src='../../i/order/pic02@2x.png'></image>
+    <text>确定拒绝工程师报价吗？</text>
+  </view>
+
+  <view class="btn_ok">
+    <button class='btn_no' bindtap=''>确认</button>
+    <button class='btn_yes' bindtap='close'>不小心点到了</button>
+  </view>
+</view>
+
+<!-- 取消订单 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal3}}" bindtap='close'></view>
+<view class="modalDlg2" wx:if="{{showModal3}}">
+  <view class='headimg'>
+    <image src='../../i/order/pic02@2x.png'></image>
+    <text>确定取消订单吗？</text>
+  </view>
+
+  <view class="btn_ok">
+    <button class='btn_no' bindtap=''>确认</button>
+    <button class='btn_yes' bindtap='close' >不小心点到了</button>
+  </view>
 </view>

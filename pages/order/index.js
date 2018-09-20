@@ -28,7 +28,7 @@ Page({
     })
   },
 
-  bindChange: function (e) {
+  bindChange: function(e) {
     var that = this;
     that.setData({
       currentTab: e.detail.current
@@ -37,7 +37,7 @@ Page({
   /**
    * 点击tab切换
    */
-  swichNav: function (e) {
+  swichNav: function(e) {
     var that = this;
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
@@ -50,14 +50,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.getOrder()
     var that = this;
     /**
      * 获取系统信息
      */
     wx.getSystemInfo({
-      success: function (res) {
+      success: function(res) {
         that.setData({
           winWidth: res.windowWidth,
           winHeight: res.windowHeight
@@ -79,24 +79,64 @@ Page({
     })
   },
 
+  /**
+   * 提交报价
+   */
+  go: function() {
+    this.setData({
+      showModal: true
+    })
+  },
+  /**
+   * 关闭报价弹窗
+   */
+  close: function() {
+    this.setData({
+      showModal: false,
+      showModal2: false,
+      showModal3: false,
+    })
+  },
+  /**
+   * 拒绝报价
+   */
+  refuse: function() {
+    this.setData({
+      showModal: false,
+    })
+    this.setData({
+      showModal2: true
+    })
+  },
+  /**
+   * 取消订单
+   */
+  refuseOrder: function(e) {
+    var i = e.currentTarget.id 
+    this.setData({
+      showModal3: true
+    })
+  },
+
   getOrder: function() {
-    var data =[
-      {
+    var data = [{
         "id": 0,
         "name": '惠普-喷墨打印机',
         "time": '2018-10-01 12.00',
         "images": '../../i/order/Order_pic@2x.png',
         "price": [],
-        "state" : {
-            "waitReceipt": true,
-            "waitEngineer": false,
-            "bePrice":false,
-            "waitReceive": false,
-            "waitPay" :false,
-            "finish":false,
-            "cancel": false
-          }
-        
+        "state": {
+          "waitReceipt": true,
+          "waitEngineer": false,
+          "bePrice": false,
+          "truePrice": false,
+          "waitReceive": false,
+          "waitPay": false,
+          "evaluate": false,
+          "finish": false,
+          "cancel": false
+        }
+
       },
       {
         "id": 1,
@@ -108,13 +148,15 @@ Page({
           "waitReceipt": false,
           "waitEngineer": true,
           "bePrice": false,
+          "truePrice": false,
           "waitReceive": false,
           "waitPay": false,
+          "evaluate": false,
           "finish": false,
           "cancel": false
         }
       },
-       {
+      {
         "id": 2,
         "name": '惠普-喷墨打印机',
         "time": '2018-10-01 12.00',
@@ -124,8 +166,10 @@ Page({
           "waitReceipt": false,
           "waitEngineer": false,
           "bePrice": true,
+          "truePrice": false,
           "waitReceive": false,
           "waitPay": false,
+          "evaluate": false,
           "finish": false,
           "cancel": false
         }
@@ -140,8 +184,10 @@ Page({
           "waitReceipt": false,
           "waitEngineer": false,
           "bePrice": false,
+          "truePrice":false,
           "waitReceive": false,
           "waitPay": false,
+          "evaluate": false,
           "finish": false,
           "cancel": true
         }
@@ -156,8 +202,10 @@ Page({
           "waitReceipt": false,
           "waitEngineer": false,
           "bePrice": false,
+          "truePrice": false,
           "waitReceive": false,
           "waitPay": false,
+          "evaluate": false,
           "finish": true,
           "cancel": false
         }
